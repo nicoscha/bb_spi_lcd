@@ -4016,7 +4016,7 @@ int bX=0, bY=0, bV=0;
        }
        if (pLCD->iLCDFlags & FLAGS_FLIPX)
            uc ^= 0x40;
-      if (pLCD->iLCDFlags & FLAGS_SWAP_RB)
+       if (pLCD->iLCDFlags & FLAGS_SWAP_RB)
           uc ^= 0x8;
       spilcdWriteCmdParams(pLCD, 0x36, &uc, 1); // MADCTL
    }
