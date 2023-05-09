@@ -930,7 +930,7 @@ const unsigned char ucGC9107InitList[]PROGMEM = {
 // List of command/parameters to initialize the ST7789 LCD
 const unsigned char uc240x240InitList[]PROGMEM = {
     1, 0x13, // partial mode off
-    1, 0x21, // display inversion off
+    1, 0x20, // display inversion off
     2, 0x36,0x08,    // memory access 0xc0 for 180 degree flipped
     2, 0x3a,0x55,    // pixel format; 5=RGB565
     3, 0x37,0x00,0x00, //
@@ -950,6 +950,7 @@ const unsigned char uc240x240InitList[]PROGMEM = {
     1, 0x29,    // display on
     0
 };
+
 // List of command/parameters to initialize the ili9341 display
 const unsigned char uc240InitList[]PROGMEM = {
         4, 0xEF, 0x03, 0x80, 0x02,
@@ -1777,7 +1778,7 @@ start_of_init:
         s = d;
         s[6] = 0x00 + iBGR;
         if (pLCD->iLCDFlags & FLAGS_INVERT)
-           s[1] = 0x20; // change inversion on (default) to off
+           s[1] = 0x21; // change inversion off (default) to o
         pLCD->iCurrentWidth = pLCD->iWidth = 240;
         pLCD->iCurrentHeight = pLCD->iHeight = 320;
 	if (pLCD->iLCDType == LCD_ST7789_240 || pLCD->iLCDType == LCD_ST7789_NOCS)
