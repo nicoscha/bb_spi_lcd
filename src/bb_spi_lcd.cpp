@@ -4010,6 +4010,9 @@ int bX=0, bY=0, bV=0;
           uc |= 8; // R/B inverted from other LCDs
            uc ^= 0x40; // x is inverted too
        }
+       if (pLCD->iLCDType == LCD_ST7789) {
+         uc |= 8; // R/B inverted from other LCDs
+       }
        if (pLCD->iLCDFlags & FLAGS_FLIPX)
            uc ^= 0x40;
       if (pLCD->iLCDFlags & FLAGS_SWAP_RB)
